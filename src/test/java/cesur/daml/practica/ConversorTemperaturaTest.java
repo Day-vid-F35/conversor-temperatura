@@ -61,5 +61,28 @@ class ConversorTemperaturaTest{
     void testCelsiusAFahrenheitCincuenta() {
         assertEquals(122.0, conversor.celsiusAFahrenheit(50.0), 0.001);
     }
+    @Test
+    @DisplayName("32ºF debe ser 0.0ºC (Congelación)")
+    void testFahrenheitACelsiusCero() {
+        assertEquals(0.0, conversor.fahrenheitACelsius(32.0), 0.001);
+    }
+
+    @Test
+    @DisplayName("212ºF debe ser 100.0ºC (Ebullición)")
+    void testFahrenheitACelsiusEbullicion() {
+        assertEquals(100.0, conversor.fahrenheitACelsius(212.0), 0.001);
+    }
+
+    @Test
+    @DisplayName("-40ºF debe ser -40.0ºC (Punto de cruce)")
+    void testFahrenheitACelsiusNegativo() {
+        assertEquals(-40.0, conversor.fahrenheitACelsius(-40.0), 0.001);
+    }
+
+    @Test
+    @DisplayName("98.6ºF debe ser 37.0ºC (Temperatura corporal)")
+    void testFahrenheitACelsiusCorporal() {
+        assertEquals(37.0, conversor.fahrenheitACelsius(98.6), 0.001);
+    }
     
 }
