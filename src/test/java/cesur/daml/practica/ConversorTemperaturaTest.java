@@ -84,5 +84,22 @@ class ConversorTemperaturaTest{
     void testFahrenheitACelsiusCorporal() {
         assertEquals(37.0, conversor.fahrenheitACelsius(98.6), 0.001);
     }
-    
+    @Test
+    @DisplayName("77ºF debe ser 25.0ºC (Clima templado)")
+    void testFahrenheitACelsiusTemplado() {
+        assertEquals(25.0, conversor.fahrenheitACelsius(77.0), 0.001);
+    }
+
+    @Test
+    @DisplayName("50ºF debe ser 10.0ºC")
+    void testFahrenheitACelsiusDiez() {
+        assertEquals(10.0, conversor.fahrenheitACelsius(50.0), 0.001);
+    }
+
+    @Test
+    @DisplayName("122ºF debe ser 50.0ºC")
+    void testFahrenheitACelsiusCincuenta() {
+        assertEquals(50.0, conversor.fahrenheitACelsius(122.0), 0.001);
+    }
+
 }
